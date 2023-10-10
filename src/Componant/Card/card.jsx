@@ -16,12 +16,20 @@ function Card({ user, isSelected, onClick }) {
                     <img src={thumbnail} alt={`${name.first} ${name.last}`} />
                 </div>
 
+
+
+
                 <div>
                     <h1>{`${name.title} ${name.first} ${name.last}`}</h1>
-                    <p>,{location.street.number},{location.street.name},{location.city},{location.country},{location.postcode}
-                    </p>
-                    <p>{location.timezone.offset}-{location.timezone.description}</p>
-                    <p>{gender}</p>
+                    {isSelected && (
+                        <>
+                            <p>{location.street.number},{location.street.name},{location.city},{location.country},{location.postcode}
+                            </p>
+                            <p>{location.timezone.offset}-{location.timezone.description}</p>
+                            <p>{gender}</p>
+                        </>
+                    )}
+
                 </div>
             </div>
 
